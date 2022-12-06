@@ -217,16 +217,17 @@ void COpenGlView::OnMouseMove(UINT nFlags, CPoint point)
 		if (lastP.y > point.y) {
 			pDoc->Rotation.x += 5;
 		}
-		else if (lastP.y < point.y) {
+		if (lastP.y < point.y) {
 			pDoc->Rotation.x -= 5;
 		}
-		else if (lastP.x < point.x) {
+		if (lastP.x < point.x) {
 			pDoc->Rotation.z += 5;
 		}
-		else if (lastP.x > point.x) {
+		if (lastP.x > point.x) {
 			pDoc->Rotation.z -= 5;
 		}
 	}
+
 	lastP = point;
 	Invalidate(FALSE);
 	CView::OnMouseMove(nFlags, point);
